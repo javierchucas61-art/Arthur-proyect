@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carta de Matrimonio</title>
+
+  <!-- Enlaza el CSS -->
+  <link rel="stylesheet" href="estilos-carta.css"> 
+</head>
+<body>
+  <div class="decor">
+    <span class="dheart h1">❤❤️</span>
+    <span class="dheart h2">❤</span>
+    <span class="dheart h3">❤</span>
+    <span class="dheart h4">❤</span>
+    <span class="dheart h5">❤</span>
+  </div>
+
+  <main class="card">
+    <!-- ======= PANTALLA INICIAL: QR ROMÁNTICO ======= -->
+<div id="qrScreen" class="qr-screen" aria-label="QR de invitación">
+  <div class="qr-box" role="button" tabindex="0" title="Toca para abrir la carta">
+    <!-- ★ Cambia la URL dentro de background-image por tu QR real -->
+  <div id="qrImage" class="qr-img"
+     style="background-image:url('https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://javierchucas61-arte.github.io/carta-matrimonio/')"
+     aria-hidden="true">
+</div>
+
+    <div class="qr-text">
+      <h3>Toca el QR</h3>
+      <p>Escanea o toca para leer la carta</p>
+    </div>
+
+    <!-- decoración romántica (pequeños corazones horizontales) -->
+    <div class="qr-hearts">
+      <span>❤</span><span>💛</span><span>💚</span><span>💙</span><span>💜</span>
+    </div>
+  </div>
+</div>
+<!-- ======= FIN QR ======= -->
+    <header class="card-head">
+      <h1>Mi amor <span id="pareja-nombre">[NOMBRE]</span></h1>
+      <p class="sub">Carta para el día de nuestro matrimonio</p>
+    </header>
+
+    <article class="letter">
+      <p>Mi amor <strong id="pareja-nombre-2">[NOMBRE]</strong>,</p>
+
+      <p>
+        Hoy, frente a quienes más queremos, quiero decirte lo que mi corazón ya sabe desde hace tiempo.
+        Desde el primer día en que nos miramos, supe que mi vida tomaba un nuevo rumbo: hoy eres mi
+        compañero/a, mi refugio y mi mayor alegría.
+      </p>
+
+      <p>
+        Me enamoro de tus risas, de la forma en que enfrentas los días difíciles, de tu paciencia y de
+        cómo conviertes lo cotidiano en algo extraordinario. Prometo apoyarte en tus sueños, cuidarte en
+        las noches de incertidumbre, celebrar contigo cada victoria y sostener tu mano cuando tropieces.
+      </p>
+
+      <p>
+        Hoy te elijo, no por una sola razón, sino por todas las pequeñas razones que suman una vida:
+        por tus defectos y tus virtudes, por los planes que ya compartimos y por los que aún no conocemos.
+        Te entrego mi palabra, mi tiempo y mi amor, hoy y cada día que venga.
+      </p>
+
+      <p class="close">Con todo mi amor,</p>
+      <p class="signature">[FIRMA O APODO]</p>
+    </article>
+
+    <footer class="card-foot">
+      <small>Fecha: <span id="fecha">[FECHA]</span></small>
+      <button id="printBtn" class="btn">Imprimir / Guardar PDF</button>
+    </footer>
+  </main>
+
+  <script>
+  // Mostrar/ocultar: QR -> Carta
+  (function(){
+    const qrBox = document.querySelector('.qr-box');
+    const qrScreen = document.getElementById('qrScreen');
+    const cardMain = document.getElementById('cardMain');
+
+    // función que abre la carta y oculta el QR
+    function openCard(){
+      // ocultar QR con transición
+      qrScreen.classList.add('hidden');
+      // mostrar carta y añadir efecto
+      cardMain.classList.remove('hidden');
+      cardMain.classList.add('fade-in');
+      // opcional: bajar scroll hasta la carta (si no está centrada)
+      setTimeout(()=> window.scrollTo({ top: document.body.scrollTop || 0, behavior: 'smooth' }), 80);
+    }
+
+    // click / teclado (Enter / Space) sobre el qrBox
+    qrBox.addEventListener('click', openCard);
+    qrBox.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ openCard(); e.preventDefault(); }
+    });
+
+    // botón imprimir (mantener funcionalidad)
+    const printBtn = document.getElementById('printBtn');
+    if(printBtn) printBtn.addEventListener('click', ()=> window.print());
+  })();
+</script>
+</body>
+</html>
