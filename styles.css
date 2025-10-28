@@ -1,0 +1,21 @@
+:root{--bg:#f3f6fb;--card:#fff;--accent:#0b74da;--danger:#ff6b6b}
+*{box-sizing:border-box;font-family:Inter, Arial, sans-serif}
+body{background:var(--bg);margin:0;padding:24px}
+.container{max-width:1000px;margin:0 auto}
+header h1{color:var(--accent)}
+.top{display:flex;gap:8px;margin-bottom:12px}
+input, select, button{padding:8px;border-radius:8px;border:1px solid #e3e8ef}
+.card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,50,0.06)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card-product{background:var(--card);padding:10px;border-radius:8px;position:relative}
+.low{border-left:4px solid var(--danger)}
+
+ /*oculta elemtos cuando tienen la clase .hedden*/
+.hidden{
+    display: none !important;
+}
+
+.ganancia { font-weight:600; margin-top:6px; }
+.ganancia.positiva { color: #0b8a2f; } /* verde para ganancia */
+.ganancia.negativa { color: #ff4d4f; } /* rojo si pierdes dinero */
+.detalle-ganancia { font-size:0.9rem; color:#555; }

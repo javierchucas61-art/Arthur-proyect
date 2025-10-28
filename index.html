@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inventario - Moderno</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Inventario - Mi Tienda</h1>
+    </header>
+
+     <!-- boton para mostrar y ocultar el formulario -->
+    <div class="top"> 
+      <input id="buscar" placeholder="buscar....">
+         <select id="ordenar">
+        <option value="">Ordenar</option>
+        <option value="precio-asc">Precio ↑</option>
+        <option value="precio-desc">Precio ↓</option>
+        <option value="cantidad-asc">Cantidad ↑</option>
+        <option value="cantidad-desc">Cantidad ↓</option>
+      </select>
+      <button id="btn-agregar-mostrar">+Nuevo</button>
+        </div>
+
+    <div id="form-agregar" class="card hidden">
+      <!-- campos igual que la opción 2 -->
+      <input id="producto" placeholder="Nombre" />
+      <input id="categoria" placeholder="Categoría" />
+      <input id="cantidad" type="number" placeholder="Cantidad" />
+      <input id="precio_compra" type="number" step="0.01" placeholder="Precio de venta(s/.)" />
+      <input id="precio" type="number" step="0.01" placeholder="Precio" />
+      <button id="guardar">Guardar</button>
+    </div>
+
+    <div id="lista" class="grid"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
