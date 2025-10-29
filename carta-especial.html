@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💖 Carta Especial 💖</title>
+  <link rel="stylesheet" href="carta-especial.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Pantalla de contraseña -->
+  <div class="screen active" id="passwordScreen" aria-hidden="false">
+    <img src="" alt="Caja de regalo" class="main-img">
+    <h2>🔒 Ingresa la contraseña</h2>
+
+    <!-- Uso de form para permitir Enter -->
+    <form id="passwordForm">
+      <input type="password" id="passwordInput" placeholder="Escribe la clave..." aria-label="Contraseña">
+      <br>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p id="errorMessage" role="status" aria-live="polite"></p>
+  </div>
+
+  <!-- Menu -->
+  <div class="screen" id="menuScreen" aria-hidden="true">
+    <h2>💌 Dedicado para ti, amorcito 💌</h2>
+    <p>Elige lo que quieres abrir:</p>
+    <div class="btn-container">
+      <a href="https://n9.cl/si29t" target="_blank" rel="noopener">
+        <button type="button">🎶 Ver video</button>
+      </a>
+      <button type="button" id="btnShowLetter">💖 Leer carta</button>
+    </div>
+  </div>
+
+  <!-- Carta -->
+  <div class="screen" id="letterScreen" aria-hidden="true">
+    <div class="card">
+      <h3>Querido Darlin,</h3>
+
+      <p>No sé muy bien cómo empezar esta carta, pero sentí
+        que necesitaba escribirte lo que a veces no me animo
+        a decirte en persona. Desde que te conocí, algo en mí
+        cambió. No fue algo repentino, sino poco a poco… como
+        cuando el sol empieza a salir y sin darte cuenta,
+        ya está iluminando todo.</p>
+
+     <p>Me gusta la forma en que hablas, cómo me haces reír
+        incluso cuando no tengo ganas, y esa tranquilidad
+        que me das sin siquiera intentarlo. A veces pienso
+        en ti sin motivo, solo porque sí, y
+        me descubro sonriendo.</p>
+        
+     <p>Eres alguien especial para mí. Que te valoro,
+        te admiro y, sobre todo, te tengo un cariño enorme.</p>
+
+    <p>Con mucho afecto,</p>
+    <p>Mireya</p>
+
+      <button type="button" id="btnBack">🔙 Volver</button>
+    </div>
+  </div>
+
+  <script src="carta-especial.js"></script>
+
+</body>
+</html>
